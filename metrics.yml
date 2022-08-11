@@ -1,0 +1,80 @@
+# Visit https://github.com/lowlighter/metrics/blob/master/action.yml for full reference
+name: Metrics
+on:
+  # Schedule updates (each hour)
+  schedule: [{cron: "0 * * * *"}]
+  # Lines below let you run workflow manually and on each commit
+  workflow_dispatch:
+  push: {branches: ["master", "main"]}
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: main
+        uses: lowlighter/metrics@latest
+        with:
+          filename: github-metrics.svg
+          # Your GitHub token
+          # The following scopes are required:
+          #  - public_access (default scope)
+          # The following additional scopes may be required:
+          #  - read:org      (for organization related metrics)
+          #  - read:user     (for user related data)
+          #  - read:packages (for some packages related data)
+          #  - repo          (optional, if you want to include private repositories)
+          token: ${{ secrets.METRICS_TOKEN }}
+
+          # Options
+          user: thegamerx1
+          template: classic
+          base: ""
+          config_timezone: Europe/Madrid
+          plugin_achievements: yes
+          plugin_achievements_display: detailed
+          plugin_achievements_limit: 7
+          plugin_achievements_secrets: yes
+          plugin_achievements_threshold: C
+          plugin_languages: yes
+          plugin_languages_analysis_timeout: 15
+          plugin_languages_categories: markup, programming
+          plugin_languages_colors: github
+          plugin_languages_limit: 8
+          plugin_languages_recent_categories: markup, programming
+          plugin_languages_recent_days: 14
+          plugin_languages_recent_load: 300
+          plugin_languages_sections: most-used
+          plugin_languages_threshold: 0%
+          plugin_lines: yes
+          plugin_pagespeed: yes
+          plugin_pagespeed_url: ndrx.ml
+          plugin_pagespeed_token: ${{ secrets.PAGESPEED_TOKEN }}
+#       - name: second
+#         uses: lowlighter/metrics@latest
+#         with:
+#           filename: second.svg
+#           token: ${{ secrets.METRICS_TOKEN }}
+#           base: ""
+#           config_order: anilist, music
+          
+#           plugin_anilist: yes
+#           plugin_anilist_medias: anime
+#           plugin_anilist_sections: watching
+#           plugin_anilist_limit: 2
+#           plugin_anilist_user: ${{ secrets.ANI_USER }}
+#           plugin_anilist_shuffle: true
+          
+#           plugin_music: yes
+#           plugin_music_provider: spotify
+#           plugin_music_token: ${{ secrets.SPOTY_TOKEN }}
+#           plugin_music_mode: top
+#           plugin_music_limit: 4
+#           plugin_music_time_range: short
+          
+          
+          
+          
+          
+          
+          
