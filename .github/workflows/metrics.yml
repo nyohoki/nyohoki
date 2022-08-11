@@ -27,7 +27,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
 
           # Options
-          user: thegamerx1
+          user: nyohoki
           template: classic
           base: ""
           config_timezone: Europe/Madrid
