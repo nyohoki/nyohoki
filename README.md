@@ -1,8 +1,9 @@
 ### Hi there 👋
 ![counter](https://count.getloli.com/get/@nyohoki?theme=rule34)
+<img align="left" width="400" src="/github-metrics.svg">
 <!--
 **nyohoki/nyohoki** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
+<!-- <img align="right" width="400" src="/second.svg"> -->
 
 
 
